@@ -1,13 +1,16 @@
 import "./App.css";
-import { Link } from "react-router-dom";
-import Navbar from "./components/navbar";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+
 import AboutPage from "./components/aboutPage";
+import ContactUs from "./components/contact_us";
 function App() {
   return (
-    <>
-      <Navbar />
-      <AboutPage />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/about-us" element={<AboutPage />}></Route>
+        <Route exact path="/contact-us" element={<ContactUs />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 class Navbar extends React.Component {
   render() {
+    const active = this.props.active;
     return (
       <>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -27,12 +28,17 @@ class Navbar extends React.Component {
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <Link className="nav-link" to="/about">
+                  <Link
+                    className={
+                      "nav-link" + (active === "about" ? " active" : "")
+                    }
+                    to="/about-us"
+                  >
                     About
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/home">
+                  <Link className="nav-link" to="/contact-us">
                     Contact us
                   </Link>
                 </li>
